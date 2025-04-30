@@ -419,6 +419,7 @@ async fn process(state: Arc<State>, cmd: ServerCommand) {
             cb(&state.cb_chat, res).await;
         }
         ServerCommand::Touches { player, frames } => {
+            println!("received touches for player {player}");
             state
                 .live_player(player)
                 .touch_frames
